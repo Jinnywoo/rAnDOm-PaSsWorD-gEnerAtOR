@@ -10,20 +10,20 @@ function generatePassword(){
   var passwordLength = prompt("How many Characters would you like your password to be?");
 
   if (passwordLength >= 8 && passwordLength <=128){
-    
+    var numberConfirm = confirm("Click OK to confirm including numeric characters");
+    var lowerConfirm = confirm("Click OK to confirm including lowercase alphabetical characters");
+    var upperConfirm = confirm("Click OK to confirm including uppercase alphabetical characters");
+    var specConfirm = confirm("Click OK to confirm including special characters");
+
+    if (!numberConfirm && !lowerConfirm && !upperConfirm && !specConfirm){
+    alert("You must select atleast one character type.")
+   } 
+  }else if(passwordLength < 8){
+   alert("Your password must be atleast 8 characters.");
   }else{
-   confirm("You must select a password length between 8 and 128 characters long.");
+    alert("Your password cannot be more than 128 characters long");
   }
   
-  var numberConfirm = confirm("Click OK to confirm including numeric characters");
-  var lowerConfirm = confirm("Click OK to confirm including lowercase alphabetical characters");
-  var upperConfirm = confirm("Click OK to confirm including uppercase alphabetical characters");
-  var specConfirm = confirm("Click OK to confirm including special characters");
-
-  console.log(numberConfirm);
-  console.log(lowerConfirm);
-  console.log(upperConfirm);
-  console.log(specConfirm);
   
 }
 
