@@ -14,10 +14,35 @@ function generatePassword(){
     var lowerConfirm = confirm("Click OK to confirm including lowercase alphabetical characters");
     var upperConfirm = confirm("Click OK to confirm including uppercase alphabetical characters");
     var specConfirm = confirm("Click OK to confirm including special characters");
+    var passwordChars =[];
 
     if (!numberConfirm && !lowerConfirm && !upperConfirm && !specConfirm){
     alert("You must select atleast one character type.")
-   } 
+    } 
+    
+    if (numberConfirm === true){
+      passwordChars = passwordChars.concat(numbers);
+    }else{
+
+    }
+    if (lowerConfirm === true){
+      passwordChars = passwordChars.concat(lowercaseChar);
+    }else{
+      
+    }
+    if (upperConfirm === true){
+      passwordChars = passwordChars.concat(uppercaseChar);
+    }else{
+      
+    }
+    if (specConfirm === true){
+      passwordChars = passwordChars.concat(specialChar);
+    }else{
+      
+    }
+    console.log(passwordChars);
+  
+
   }else if(passwordLength < 8){
    alert("Your password must be atleast 8 characters.");
   }else{
