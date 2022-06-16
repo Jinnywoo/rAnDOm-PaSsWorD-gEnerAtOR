@@ -40,7 +40,13 @@ function generatePassword(){
     }else{
       
     }
-    console.log(passwordChars);
+    var passwordArray = "";
+
+    for(var i = 0; i <= passwordLength; i++){
+      var randomChar = Math.floor(Math.random()*passwordChars.length);
+      passwordArray += passwordChars.substring(randomChar, randomChar +1);
+    }
+    return passwordArray;
   
 
   }else if(passwordLength < 8){
@@ -51,14 +57,6 @@ function generatePassword(){
   
   
 }
-
-
-
-
-
-
-
-
 
 
 // Assignment Code
