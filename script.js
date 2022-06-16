@@ -20,31 +20,23 @@ function generatePassword(){
     alert("You must select atleast one character type.")
     } 
     
-    if (numberConfirm === true){
+    if (numberConfirm){
       passwordChars = passwordChars.concat(numbers);
-    }else{
-
     }
-    if (lowerConfirm === true){
+    if (lowerConfirm){
       passwordChars = passwordChars.concat(lowercaseChar);
-    }else{
-      
     }
-    if (upperConfirm === true){
+    if (upperConfirm){
       passwordChars = passwordChars.concat(uppercaseChar);
-    }else{
-      
     }
-    if (specConfirm === true){
+    if (specConfirm){
       passwordChars = passwordChars.concat(specialChar);
-    }else{
-      
     }
     var passwordArray = "";
 
-    for(var i = 0; i <= passwordLength; i++){
-      var randomChar = Math.floor(Math.random()*passwordChars.length);
-      passwordArray += passwordChars.substring(randomChar, randomChar +1);
+    for(var i = 0; i < passwordLength; i++){
+      passwordArray += passwordChars[Math.floor(Math.random()*passwordChars.length)];
+      
     }
     return passwordArray;
   
